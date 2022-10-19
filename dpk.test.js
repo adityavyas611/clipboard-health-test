@@ -51,4 +51,11 @@ describe("deterministicPartitionKey", () => {
 });
 });
 
+describe("deterministicPartitionKey", () => {
+  it("Returns the literal hash value less than 256", () => {
+    const trivialKey = deterministicPartitionKey("b");
+    expect(trivialKey.length).toBeLessThanOrEqual(256);
+});
+});
+
 
