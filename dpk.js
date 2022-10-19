@@ -1,6 +1,4 @@
 const crypto = require("crypto");
-const stringify = require('stream-json-stringify');
-
 
 exports.deterministicPartitionKey = (event) => {
   const TRIVIAL_PARTITION_KEY = "0";
@@ -8,7 +6,7 @@ exports.deterministicPartitionKey = (event) => {
   let candidate = TRIVIAL_PARTITION_KEY;
 
   if (event && Object.keys(event).length) {
-    
+
     if (event.partitionKey) {
       candidate = event.partitionKey;
     } else{
