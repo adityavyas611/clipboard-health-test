@@ -5,9 +5,9 @@ exports.deterministicPartitionKey = (event) => {
   const MAX_PARTITION_KEY_LENGTH = 256;
   let candidate = TRIVIAL_PARTITION_KEY;
 
-  if (event && Object.keys(event).length) {
-
-    if (event.partitionKey) {
+  if (event) {
+    
+    if (event.hasOwnProperty('partitionKey')) {
       candidate = event.partitionKey;
     } else{
       const data = JSON.stringify(event);
