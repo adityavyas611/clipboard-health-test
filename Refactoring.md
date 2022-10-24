@@ -10,4 +10,10 @@ You will be graded on the exhaustiveness and quality of your unit tests, the dep
 
 ## Your Explanation Here
 
-- If the we don't pass anything, just return the result of "0", if we pass the object we we need to parse the object as string and return the hash value corresponding to it, we can remove the JSON.stringify because it blocks the event loop when it parses the long object. So instead of that we can use streams-json-stringify to use the stream and stringify the object. So, it will optimise the code. I separated out the function, so it's more readable and understandable of what function does to the user.
+- Splitted the single function into individual entity, so it is more modular for testing and more scalable
+- Easy to test and understand
+- Cleaner code and easy to debug, if added more complexity
+
+-- More Features to be done
+- Removing JSON.stringify as it blocks the event loop when larger object given
+- We can use JSON stream stringify, to stream the parsing and stringify of the object 
